@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Click</title>
+    <style>
+        body{
+            padding: 100px;
+            background-color: rgb(255, 255, 255);
+        }
+        .main{
+            height: 80vh;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -10px 10px 15px -2px black,10px -10px 15px -2px black;;
+            border-radius: 20px;
+        }
+        span{
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        button{
+            margin-left: 20px;
+        }
+        .button-cont{
+            display: flex;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            border-radius: 20px;
+            height: 35px;
+        }
+      
+        @media (max-width:523px){
+           span{
+               /* padding: 30px; */
+               font-size: 3rem ;
+
+           }
+        }
+        @media (max-width:350px){
+            span{
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="conatiner">
+        <div class="main">
+            <span>Numbers of Click <span id="count">00</span></span>
+          <div class="button-cont">
+              <button id="count-btn">Click</button>
+              <button id="reset-btn">Reset</button>
+          </div>
+           </div>
+    </div>
+
+    <script>
+         let btn = document.getElementById("count-btn");
+       let count=0;
+       btn.addEventListener("click",function(){
+        count++;
+        document.getElementById("count").innerHTML =count;
+       });
+       document.getElementById("reset-btn").addEventListener("click",function(){
+        count =0;
+        document.getElementById("count").innerHTML =count;
+       });
+    </script>
+</body>
+</html>
